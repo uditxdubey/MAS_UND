@@ -42,19 +42,23 @@ PII_PATTERNS: dict[str, re.Pattern] = {
         r"\b[A-Z]{2}\d{2}[A-Z0-9]{4}\d{7}([A-Z0-9]?){0,16}\b",
     ),
     "phone_de": re.compile(
-        r"(\+49|0049|0)[1-9]\d{1,14}",
+        # Must start with +49 or 0049 or 0 followed by 15/16/17
+        # (German mobile prefixes) — not just any digit sequence
+        r"(\+49|0049)([\s\-]?)(15|16|17|30|40|69|89)\d{6,10}"
+        r"|(\b0(15|16|17|30|40|69|89)\d{6,10}\b)",
     ),
     "passport": re.compile(
-        r"\b[A-Z]{1,2}[0-9]{6,9}\b",
+        # German passport: letter(s) followed by alphanumeric mix, 8-9 chars total
+        r"\b[A-Z]{1,2}[0-9A-Z]{6,8}\b",
     ),
     "steuer_id": re.compile(
-        r"\b[0-9]{2}\s?[0-9]{3}\s?[0-9]{5}\b",  # German Steueridentifikationsnummer
+        # German Steuer-ID: exactly 11 digits, never starts with 0
+        r"\b[1-9]\d{10}\b",
     ),
     "sozialversicherung": re.compile(
-        r"\b\d{2}[0-9]{6}[A-Z]\d{3}\b",          # German Sozialversicherungsnummer
+        r"\b\d{2}[0-9]{6}[A-Z]\d{3}\b",
     ),
 }
-
 
 # ── PII Guard ─────────────────────────────────────────────────────────────────
 class PIIGuard:
