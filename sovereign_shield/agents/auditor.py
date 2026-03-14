@@ -132,11 +132,12 @@ class AuditorAgent:
         )
 
         audit_logger.log_halt(
-            url    = url,
-            guard  = guard,
-            reason = reason,
-            **decision.to_dict(),
-        )
+    url    = url,
+    guard  = guard,
+    reason = reason,
+    **{k: v for k, v in decision.to_dict().items()
+       if k not in ("url", "guard", "reason", "verdict")},
+)
 
         return decision
 
@@ -169,10 +170,11 @@ class AuditorAgent:
         )
 
         audit_logger.log_pass(
-            url   = url,
-            guard = guard,
-            **decision.to_dict(),
-        )
+    url   = url,
+    guard = guard,
+    **{k: v for k, v in decision.to_dict().items()
+       if k not in ("url", "guard", "verdict")},
+)
 
         return decision
 
@@ -202,9 +204,10 @@ class AuditorAgent:
         )
 
         audit_logger.log_error(
-            guard  = guard,
-            reason = reason,
-            **decision.to_dict(),
-        )
+    guard  = guard,
+    reason = reason,
+    **{k: v for k, v in decision.to_dict().items()
+       if k not in ("guard", "reason", "verdict")},
+)
 
         return decision
