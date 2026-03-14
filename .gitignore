@@ -1,0 +1,27 @@
+# Virtual environment — never commit this
+.venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+sovereign_shield.egg-info/
+
+# Build artifacts
+dist/
+build/
+
+# Environment variables
+.env
+
+# Large model and data files
+*.mmdb
+*.gguf
+*.bin
+
+# Logs
+*.log
+
+# Mac system file
+.DS_Store.venv/

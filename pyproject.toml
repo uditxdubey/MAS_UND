@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sovereign-shield"
+version = "0.1.0"
+description = "Real-time EU AI Act compliance interception layer for AI agents"
+readme = "README.md"
+license = { text = "Proprietary" }
+requires-python = ">=3.12"
+authors = [
+    { name = "Udit Naresh Dubey", email = "ruditdubey@email.com" }
+]
+keywords = [
+    "EU AI Act",
+    "compliance",
+    "AI governance",
+    "data sovereignty",
+    "GDPR",
+    "guardrails",
+    "multi-agent systems",
+]
+
+dependencies = [
+    "maxminddb>=2.0.0",        # offline GeoIP lookups — no cloud needed
+    "requests>=2.31.0",        # the library we intercept
+]
+
+[project.optional-dependencies]
+neural = [
+    "llama-cpp-python>=0.2.0", # local LLM — install separately, needs C compiler
+]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.4.0",
+]
+
+[project.urls]
+Homepage   = "https://github.com/uditxdubey/MAS_UND"
+Repository = "https://github.com/uditxdubey/MAS_UND"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sovereign_shield*"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
