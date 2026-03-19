@@ -238,11 +238,8 @@ sovereign_shield/
 
 ## License
 
-Copyright (c) 2026 Udit Naresh Dubey. All rights reserved.
-
-This software is proprietary and confidential.
-Unauthorized use, copying, or distribution is strictly prohibited.
-For licensing inquiries: ruditdubey@gmail.com
+This software is licensed under the [Business Source LICENSE (BSL)](https://mariadb.com/bsl-faq-mariadb/).
+For the full details, refer to the [LICENSE file](LICENSE).
 
 ---
 
