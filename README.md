@@ -244,11 +244,7 @@ sovereign_shield/
 
 ## License
 
-Copyright (c) 2026 Udit Naresh Dubey. All rights reserved.
-
-This software is proprietary and confidential.
-Unauthorized use, copying, or distribution is strictly prohibited.
-For licensing inquiries: ruditdubey@gmail.com
+MIT-License
 
 ---
 
