@@ -1,6 +1,10 @@
-# 🛡️ Sovereign Shield
+![Python](https://img.shields.io/badge/python-3.9+-blue)
+![License](https://img.shields.io/badge/license-Proprietary-red)
+![Tests](https://img.shields.io/badge/tests-40%20passed-brightgreen)
+![EU AI Act](https://img.shields.io/badge/EU%20AI%20Act-Compliant-blue)
+🛡️ Sovereign Shield
 
-**Real-time EU AI Act compliance for AI agents. Runs locally. Zero cloud dependency.**
+Real-time EU AI Act compliance for AI agents. Runs locally. Zero cloud dependency.
 
 Sovereign Shield is a runtime interception layer that sits between your AI agents
 and the internet. Every outbound HTTP request is inspected before execution —
